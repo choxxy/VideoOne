@@ -10,7 +10,7 @@ val videoRepositoryModule  = module {
 
 class VideoRepository(private val videoApiService: VideoApiService){
 
-    suspend fun getVideos() : Response<List<Video>> {
+    suspend fun getVideos() : List<Video> {
         return  videoApiService.getApi().getVideos()
     }
 }

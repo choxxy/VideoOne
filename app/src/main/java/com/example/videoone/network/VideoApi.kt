@@ -9,5 +9,5 @@ import retrofit2.http.GET
 interface VideoApi{
 
     @GET("/vidoes")
-    suspend  fun getVideos() : Response<List<Video>>
+    suspend  fun getVideos() : List<Video>
 }
