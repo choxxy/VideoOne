@@ -13,14 +13,14 @@ import java.util.*
  */
 class MockResponseInterceptor(private val context: Context) : Interceptor {
 
-    private var scenario: String? = null
+    private val endpoint: String = "video"
 
 
     @Throws(IOException::class)
     override fun intercept(chain: Interceptor.Chain): Response {
 
         // Get resource ID for mock response file.
-        var fileName = getFilename(chain.request(), scenario)
+        var fileName = getFilename(chain.request(), endpoint)
         var resourceId = getResourceId(fileName)
         if (resourceId == 0) {
             // Attempt to fallback to default mock response file.
@@ -57,9 +57,9 @@ class MockResponseInterceptor(private val context: Context) : Interceptor {
     }
 
     @Throws(IOException::class)
-    private fun getFilename(request: Request, scenario: String?): String {
+    private fun getFilename(request: Request, endpoint: String?): String {
         val requestedMethod: String = request.method
-        val prefix = if (scenario == null) "" else scenario + "_"
+        val prefix = if (endpoint == null) "" else endpoint + "_"
         var filename = prefix + requestedMethod + request.url.toUrl().path
         filename = filename.replace("/", "_").replace("-", "_").toLowerCase(Locale.getDefault())
         return filename
