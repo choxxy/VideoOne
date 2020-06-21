@@ -1,3 +1,11 @@
 package com.example.videoone.model
 
-data class Video(val sourceUrl:String, val videoName:String)
+
+data class Videos(
+    val videos: List<Video>
+
+)
+data class Video(val mediaId: Long
+                 , val sourceUrl:String
+                 , val videoName:String
+                 , val genre:String)

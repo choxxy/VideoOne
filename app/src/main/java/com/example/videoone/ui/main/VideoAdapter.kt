@@ -20,7 +20,7 @@ class VideoAdapter(val listCallBack: ListCallBack) : RecyclerView.Adapter<VideoA
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         holder.bind(videoList[position])
         holder.itemView.setOnClickListener{
-            listCallBack.onItemClick(videoList[position])
+            listCallBack.onItemClick(position)
         }
     }
 
@@ -34,6 +34,7 @@ class VideoAdapter(val listCallBack: ListCallBack) : RecyclerView.Adapter<VideoA
         fun bind(video: Video) {
             itemView.apply {
                 title.text = video.videoName
+                genre.text = video.genre
             }
         }
     }

@@ -17,7 +17,7 @@ class VideoOne : Application(){
         startKoin{
             androidLogger()
             androidContext(this@VideoOne)
-            modules(networkModule, videoRepositoryModule, mainViewModelModule)
+            modules(listOf(networkModule, videoRepositoryModule, mainViewModelModule))
         }
     }
 }

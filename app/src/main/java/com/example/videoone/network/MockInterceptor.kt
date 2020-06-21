@@ -20,19 +20,10 @@ class MockResponseInterceptor(private val context: Context) : Interceptor {
     override fun intercept(chain: Interceptor.Chain): Response {
 
         // Get resource ID for mock response file.
-        var fileName = getFilename(chain.request(), endpoint)
-        var resourceId = getResourceId(fileName)
-        if (resourceId == 0) {
-            // Attempt to fallback to default mock response file.
-            fileName = getFilename(chain.request(), null)
-            resourceId = getResourceId(fileName)
-            if (resourceId == 0) {
-                throw IOException("Could not find res/raw/$fileName")
-            }
-        }
+        val fileName = getFilename(chain.request(), endpoint)
 
         // Get input stream and mime type for mock response file.
-        val inputStream: InputStream = context.resources.openRawResource(resourceId)
+        val inputStream: InputStream = context.assets.open(fileName)
         val size: Int = inputStream.available()
         val buffer = ByteArray(size)
         inputStream.read(buffer)
@@ -59,14 +50,9 @@ class MockResponseInterceptor(private val context: Context) : Interceptor {
     @Throws(IOException::class)
     private fun getFilename(request: Request, endpoint: String?): String {
         val requestedMethod: String = request.method
-        val prefix = if (endpoint == null) "" else endpoint + "_"
-        var filename = prefix + requestedMethod + request.url.toUrl().path
+        var filename =  requestedMethod + request.url.toUrl().path
         filename = filename.replace("/", "_").replace("-", "_").toLowerCase(Locale.getDefault())
-        return filename
-    }
-
-    private fun getResourceId(filename: String): Int {
-        return context.resources.getIdentifier(filename, "raw", context.packageName)
+        return "$filename.json"
     }
 
 }

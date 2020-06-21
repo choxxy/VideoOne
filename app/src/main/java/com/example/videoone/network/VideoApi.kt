@@ -1,13 +1,13 @@
 package com.example.videoone.network
 
 
-import com.example.videoone.model.Video
-import retrofit2.Response
+
+import com.example.videoone.model.Videos
 import retrofit2.http.GET
 
 
 interface VideoApi{
 
-    @GET("/vidoes")
-    suspend  fun getVideos() : List<Video>
+    @GET("/videos")
+    suspend  fun getVideos() : Videos
 }

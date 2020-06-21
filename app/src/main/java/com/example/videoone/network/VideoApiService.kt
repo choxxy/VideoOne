@@ -17,7 +17,7 @@ class VideoApiService( private val context: Context) {
     fun getApi() :VideoApi{
 
          return Retrofit.Builder()
-             .baseUrl("http://example.com/")
+             .baseUrl("http://videoone.com/")
              .addConverterFactory(GsonConverterFactory.create())
              .client(client())
              .build()
@@ -27,7 +27,7 @@ class VideoApiService( private val context: Context) {
 
     private fun client(): OkHttpClient{
         val builder = OkHttpClient.Builder()
-        builder.addNetworkInterceptor(MockResponseInterceptor(context))
+        builder.addInterceptor(MockResponseInterceptor(context))
         return builder.build()
     }
 
