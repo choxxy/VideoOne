@@ -1,12 +1,12 @@
 {
   "videos":[
       {
-        "sourceUrl":"",
-        "videoName":""
+        "sourceUrl":"https://s3.amazonaws.com/interview-quiz-stuff/tos-trailer/master.m3u8",
+        "videoName":"TOS-teaser"
       },
       {
-        "sourceUrl":"",
-        "videoName":""
+        "sourceUrl":"https://s3.amazonaws.com/interview-quiz-stuff/tos/master.m3u8",
+        "videoName":"TOS-clip"
       }
   ]
 }
