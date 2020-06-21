@@ -8,10 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import com.example.videoone.R
+import com.example.videoone.model.Video
 import kotlinx.android.synthetic.main.main_fragment.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class MainFragment : Fragment() {
+class MainFragment : Fragment(), ListCallBack {
 
     val mainViewModel: MainViewModel by viewModel()
 
@@ -35,7 +36,7 @@ class MainFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with(videolist){
-            adapter = VideoAdapter()
+            adapter = VideoAdapter(this@MainFragment)
         }
 
         viewModel.videoList.observe(viewLifecycleOwner, Observer { list->
@@ -43,6 +44,8 @@ class MainFragment : Fragment() {
         })
     }
 
+    override fun onItemClick(video: Video) {
 
+    }
 
 }

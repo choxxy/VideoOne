@@ -8,7 +8,7 @@ import com.example.videoone.R
 import com.example.videoone.model.Video
 import kotlinx.android.synthetic.main.layout_video_item.view.*
 
-class VideoAdapter() : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
+class VideoAdapter(val listCallBack: ListCallBack) : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
 
      var videoList = mutableListOf<Video>()
 
@@ -19,6 +19,9 @@ class VideoAdapter() : RecyclerView.Adapter<VideoAdapter.VideoViewHolder>() {
 
     override fun onBindViewHolder(holder: VideoViewHolder, position: Int) {
         holder.bind(videoList[position])
+        holder.itemView.setOnClickListener{
+            listCallBack.onItemClick(videoList[position])
+        }
     }
 
     fun setVideos(videos: List<Video>) {
