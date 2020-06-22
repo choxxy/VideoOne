@@ -23,7 +23,7 @@
         android:id="@+id/video_title"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="20dp"
         android:layout_marginEnd="16dp"
         android:gravity="center"
         android:textColor="@color/white"
@@ -96,6 +96,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/exo_next"
         />
+
+
+    <ImageButton
+        android:id="@id/exo_prev"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        style="@style/ExoMediaButton.Previous"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_layout"
+        app:layout_constraintEnd_toEndOf="@+id/start_guideline"
+        app:layout_constraintStart_toEndOf="@id/previous_video"
+        />
+
+    <TextView
+        android:layout_marginStart="16dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:text="@string/previous_video"
+        android:textStyle="bold"
+        android:gravity="end"
+        android:id="@+id/previous_video"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nav_layout"
+        app:layout_constraintEnd_toStartOf="@+id/exo_prev"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/start_guideline"
