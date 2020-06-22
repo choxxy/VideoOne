@@ -7,6 +7,7 @@ val videoRepositoryModule  = module {
     factory { VideoRepository(get()) }
 }
 
+/** simple data manager **/
 class VideoRepository(private val videoApiService: VideoApiService){
     suspend fun getVideos() : Videos  = videoApiService.getApi().getVideos()
 }

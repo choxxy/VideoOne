@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">VideoOne</string>
+    <string name="next_video">Next video</string>
 </resources>

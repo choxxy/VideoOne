@@ -13,7 +13,7 @@ class VideoOne : Application(){
     override fun onCreate() {
         super.onCreate()
 
-        // Start Koin
+        // init Koin
         startKoin{
             androidLogger()
             androidContext(this@VideoOne)
