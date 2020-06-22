@@ -35,7 +35,7 @@ The plan was to have a json file (named according to API endpoint) with mocked r
 
 |        Task                                                            | Time estimate   |  Actual time|
 |------------------------------------------------------------------------|:----------------|:------------|
-| Build user interface for viewing the selected video. Should be fullscreen (will use an activity) and have code to init video player and manage it  | 2 hours | 3hours |
+| Build user interface for viewing the selected video. Should be fullscreen (will use an activity) and have code to init and manage video player | 2 hours | 3hours |
    
 ### App allows user to play. Pause and seek video (customization task) + App shows  video duration  and current  time + User navigates back to video list and picks another video for viewing
 
