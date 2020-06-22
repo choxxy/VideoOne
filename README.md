@@ -18,8 +18,7 @@ Break down of the various activities during the app development (devlog)
 
 |        Task                                                            | Time estimate   |  Actual time|
 |------------------------------------------------------------------------|:----------------|:------------|
-| Mock a json api. Mock api will provide video api (actual API not available )
-The plan was to have a json file (named according to API endpoint) with mocked responses stored in the assets folder. API calls will be intercepted and responses loaded from file depending on the endpoint name | 1 hour | 1 hour |
+| Mock a json api. Mock api will provide video api (actual API not available). The plan was to have a json file (named according to API endpoint) with mocked responses stored in the assets folder. API calls will be intercepted and responses loaded from file depending on the endpoint name | 1 hour | 1 hour |
 | Code an api  class to interact with mock api (use retrofit + okhttp)| 1 hour | 40 minutes|
 | Code a repository class  to  handle data operations and sources  (include a data class to hold video information).| 1 hour | 35 minutes|
 
