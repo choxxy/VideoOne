@@ -51,7 +51,10 @@ class MockResponseInterceptor(private val context: Context) : Interceptor {
     private fun getFilename(request: Request, endpoint: String?): String {
         val requestedMethod: String = request.method
         var filename =  requestedMethod + request.url.toUrl().path
-        filename = filename.replace("/", "_").replace("-", "_").toLowerCase(Locale.getDefault())
+        //construct filename
+        filename = filename.replace("/", "_")
+            .replace("-", "_")
+            .toLowerCase(Locale.getDefault())
         return "$filename.json"
     }
 

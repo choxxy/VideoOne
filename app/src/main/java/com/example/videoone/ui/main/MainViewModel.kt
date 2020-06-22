@@ -14,7 +14,6 @@ val mainViewModelModule =  module {
     viewModel { MainViewModel(get()) }
 }
 
-
 class MainViewModel(private val videoRepository: VideoRepository) : ViewModel() {
 
     val videoList:  LiveData<List<Video>> = liveData{
