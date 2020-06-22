@@ -41,5 +41,5 @@ The plan was to have a json file (named according to API endpoint) with mocked r
 
 |        Task                                                            | Time estimate   |  Actual time|
 |------------------------------------------------------------------------|:----------------|:------------| 
-|Implement a custom video controller with play , pause and seeking functionality . Please note is should display duration and time  and allow back navigate. (back navigation should be manual user initiated or automatic after playlist ends ) | 4 hours | 6 hours |
+|Implement a custom video controller with play , pause and seeking functionality . Please note it should include displaying duration and time and allow back navigation (back navigation should be manual user initiated or automatic after playlist ends ) | 4 hours | 6 hours |
 |Customize launcher icon + video list item placeholder image | 30 minutes | 15 minutes |
