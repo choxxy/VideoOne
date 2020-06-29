@@ -35,9 +35,9 @@ class MockResponseInterceptor(private val context: Context) : Interceptor {
         return Response.Builder()
             .addHeader("content-type", mimeType)
             .body(
-               ResponseBody.create(
-                   mimeType.toMediaTypeOrNull(),
-                   buffer
+                ResponseBody.create(
+                    mimeType.toMediaTypeOrNull(),
+                    buffer
                 )
             )
             .code(200)
